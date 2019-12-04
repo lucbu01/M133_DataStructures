@@ -8,6 +8,12 @@ describe("Data structures", () => {
             const result = testee.size();
             expect(result).to.equal(0);
         })
+
+        it('is empty on creaton', () => {
+            const testee = new Queue();
+            const result = testee.isEmpty();
+            expect(result).to.equal(true);
+        });
     })
 
     // describe("Factory", () => {
