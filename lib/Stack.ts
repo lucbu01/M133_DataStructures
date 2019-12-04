@@ -1,6 +1,6 @@
 import { IDataScructure } from "./IDataStructure";
 
-export class Queue implements IDataScructure {
+export class Stack implements IDataScructure {
     private data: any[];
 
     constructor() {
@@ -20,10 +20,10 @@ export class Queue implements IDataScructure {
     }
 
     public peek(): any {
-        return this.isEmpty() ? undefined : this.data[0];
+        return this.isEmpty() ? undefined : this.data[this.size() - 1];
     }
 
     public poll(): any {
-        return this.data.shift();
+        return this.data.pop();
     }
 }
