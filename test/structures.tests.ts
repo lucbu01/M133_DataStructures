@@ -7,25 +7,25 @@ import { DataStructureFactory } from "../lib/DataStructureFactory";
 describe("Data structures", () => {
     describe("Queue", () => {
         it("has size", () => {
-            const testee = new Queue();
+            const testee = DataStructureFactory.create(DataStructureType.FIFO);
             const result = testee.size();
             expect(result).to.equal(0);
         })
 
         it('is empty on creaton', () => {
-            const testee = new Queue();
+            const testee = DataStructureFactory.create(DataStructureType.FIFO);
             const result = testee.isEmpty();
             expect(result).to.equal(true);
         });
 
         it('peek undefined on empty queue', () => {
-            const testee = new Queue();
+            const testee = DataStructureFactory.create(DataStructureType.FIFO);
             const result = testee.peek();
             expect(result).to.equal(undefined);
         });
 
         it('can enqueue and peek', () => {
-            const testee = new Queue();
+            const testee = DataStructureFactory.create(DataStructureType.FIFO);
             testee.enqueue("Hello");
             testee.enqueue("You");
             const result = testee.peek();
@@ -34,13 +34,13 @@ describe("Data structures", () => {
         });
 
         it('poll undefined on empty queue', () => {
-            const testee = new Queue();
+            const testee = DataStructureFactory.create(DataStructureType.FIFO);
             const result = testee.poll();
             expect(result).to.equal(undefined);
         });
 
         it('can enqueue and poll', () => {
-            const testee = new Queue();
+            const testee = DataStructureFactory.create(DataStructureType.FIFO);
             testee.enqueue("Hello");
             testee.enqueue("You");
             const result = testee.poll();
@@ -51,25 +51,25 @@ describe("Data structures", () => {
 
     describe("Stack", () => {
         it("has size", () => {
-            const testee = new Stack();
+            const testee = DataStructureFactory.create(DataStructureType.LIFO);
             const result = testee.size();
             expect(result).to.equal(0);
         })
 
         it('is empty on creaton', () => {
-            const testee = new Stack();
+            const testee = DataStructureFactory.create(DataStructureType.LIFO);
             const result = testee.isEmpty();
             expect(result).to.equal(true);
         });
 
         it('peek undefined on empty queue', () => {
-            const testee = new Stack();
+            const testee = DataStructureFactory.create(DataStructureType.LIFO);
             const result = testee.peek();
             expect(result).to.equal(undefined);
         });
 
         it('can enqueue and peek', () => {
-            const testee = new Stack();
+            const testee = DataStructureFactory.create(DataStructureType.LIFO);
             testee.enqueue("Hello");
             testee.enqueue("You");
             const result = testee.peek();
@@ -78,13 +78,13 @@ describe("Data structures", () => {
         });
 
         it('poll undefined on empty queue', () => {
-            const testee = new Stack();
+            const testee = DataStructureFactory.create(DataStructureType.LIFO);
             const result = testee.poll();
             expect(result).to.equal(undefined);
         });
 
         it('can enqueue and poll', () => {
-            const testee = new Stack();
+            const testee = DataStructureFactory.create(DataStructureType.LIFO);
             testee.enqueue("Hello");
             testee.enqueue("You");
             const result = testee.poll();
